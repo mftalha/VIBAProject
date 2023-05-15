@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-user-add',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-add.component.scss']
 })
 export class UserAddComponent {
+
+  userAdd(form: NgForm){
+    
+  }
 
 }
