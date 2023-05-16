@@ -4,6 +4,8 @@ import { UserAddComponent } from './user/user-add/user-add.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ModelModule } from '../model/model.module';
 
 
 
@@ -15,6 +17,8 @@ import { RouterModule, Routes } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ModelModule,
     RouterModule.forChild([
       {path:"", component: HomeComponent},
       {path:"home", component: HomeComponent},
