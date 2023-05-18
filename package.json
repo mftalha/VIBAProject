@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "json": "json-server data.js -p 3501 "
   },
   "private": true,
   "dependencies": {
@@ -18,6 +19,7 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "alertifyjs": "^1.13.1",
     "bootstrap": "^5.2.3",
     "fontawesome-free-6.2.1": "^6.2.1",
     "rxjs": "~7.8.0",

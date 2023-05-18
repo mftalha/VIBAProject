@@ -8,35 +8,35 @@
         <div class="row mb-4 g-0">
             <label class="col-2" style="font-size: 110%;" for="userNameSurname">Ad Soyad :</label>
             <div class="col-10">
-                <input type="text" id="userNameSurname" name="userNameSurname" #name="ngModel" [(ngModel)]="userModel.userNameSurname"  class="form-control" placeholder="Ad SoyAd">
+                <input type="text" id="userNameSurname" name="userNameSurname" #name="ngModel" [(ngModel)]="userModel.userNameSurname"  class="form-control" placeholder="Ad SoyAd" required>
             </div>   
         </div>
 
         <div class="row mb-4 g-0">
             <label for="userDescription" style="font-size: 110%;" class="col-2">Kullanıcı Açıklaması:</label>
             <div class="col-10">
-                <input type="text" id="userDescription" name="userDescription" #name="ngModel" [(ngModel)]="userModel.userDescription" class="form-control" placeholder="Kullanıcı Açıklaması">
+                <input type="text" id="userDescription" name="userDescription" #name="ngModel" [(ngModel)]="userModel.userDescription" class="form-control" placeholder="Kullanıcı Açıklaması" required>
             </div>   
         </div>
 
         <div class="row mb-4 g-0">      
             <label for="userPhone" style="font-size: 110%;" class="col-2">Kullanıcı Telefon:</label>
             <div class="col-10">
-                <input id="userPhone" type="text" class="form-control" #name="ngModel" name="userPhone" [(ngModel)]="userModel.userPhone" placeholder="Kullanıcı Telefon">
+                <input id="userPhone" type="text" class="form-control" #name="ngModel" name="userPhone" [(ngModel)]="userModel.userPhone" placeholder="Kullanıcı Telefon" required>
             </div>   
         </div>
 
         <div class="row mb-4 g-0">
             <label for="userEmail" syle="font-size: 110%" class="col-2">Kullanıcı Email:</label>
             <div class="col-10">
-                <input type="text" id="userEmail" class="form-control" #name="ngModel" name="userEmail" [(ngModel)]="userModel.userEmail"  placeholder="Kullanıcı Email">
+                <input type="text" id="userEmail" class="form-control" #name="ngModel" name="userEmail" [(ngModel)]="userModel.userEmail"  placeholder="Kullanıcı Email" required>
             </div>
         </div>
 
         <div class="row mb-4 g-0 ">
             <label class="col-2" for="userIsActive">Kullanıcı Aktif Mi</label>
             <div class="col-10">
-                <input type="checkbox" id="userIsActive" #name="ngModel" name="userIsActive" [(ngModel)]="userModel.userIsActive" class="form-check-input">
+                <input type="checkbox" id="userIsActive" #name="ngModel" name="userIsActive" [(ngModel)]="userModel.userIsActive" class="form-check-input" [checked]="userModel.userIsActive">
             </div>
         </div>
 
@@ -45,11 +45,13 @@
         <div class="row mb-4 g-0">
             <label class="col-2" syle="font-size: 110%" for="connectionType">Bağlantı Tipi:</label>
             <div class="col-10">
-                <input type="text" id="connectionType" class="form-control" #name="ngModel" name="connectionType" [(ngModel)]="userModel.connectionType" placeholder="Bağlantı Tipi">
+                <select class="form-select" #name="ngModel" name="connectionType" [(ngModel)]="userModel.connectionType">
+                     <option *ngFor="let n of connectionType" [value]="n.value">{{ n.name }}</option> 
+                </select>
             </div>
         </div>
 
-        <div class="row mb-4 g-0">
+        <div class="row mb-4 g-0" *ngIf="userModel.connectionType == 1"> <!-- bağlantı tipinde ftp seçili ise bu input gösterilip doldurulmalı -->
             <label for="ftpUrl" class="col-2" syle="font-size: 110%">Ftp Url:</label>
             <div class="col-10">
                 <input type="text" id="ftpUrl" class="form-control" #name="ngModel" name="ftpUrl" [(ngModel)]="userModel.ftpUrl" placeholder="Ftp Url">
@@ -59,26 +61,25 @@
         <div class="row mb-4 g-0">
             <label class="col-2" style="font-size: 110%" for="userId">Kullanıcı Id:</label>
             <div class="col-10">
-                <input type="text" id="userId" class="form-control" #name="ngModel" name="userId" [(ngModel)]="userModel.userId" placeholder="user Id">
+                <input type="text" id="userId" class="form-control" #name="ngModel" name="userId" [(ngModel)]="userModel.userId" placeholder="user Id" required>
             </div>
         </div>
 
         <div class="row mb-4 g-0">
             <label for="userPassword" style="font-size: 110%" class="col-2">Kullanıcı Şifre:</label>
             <div class="col-10">
-                <input type="password" id="userPassword" class="form-control" #name="ngModel" name="userPassword" [(ngModel)]="userModel.userPassword" placeholder="Kullanıcı Şifre">
+                <input type="password" id="userPassword" class="form-control" #name="ngModel" name="userPassword" [(ngModel)]="userModel.userPassword" placeholder="Kullanıcı Şifre" required>
             </div>
         </div>
 
         <div class="row mb-4 g-0">
             <label for="userPasswordAgain" style="font-size: 110%" class="col-2">Kullanıcı Şifre Tekrar:</label>
             <div class="col-10">
-                <input type="password" id="userPasswordAgain" class="form-control" #name="ngModel" name="userPasswordAgain" [(ngModel)]="userModel.userPasswordAgain" placeholder="Kullanıcı Şifre Tekrar">
+                <!-- <input type="password" id="userPasswordAgain" class="form-control" #name="ngModel" name="userPasswordAgain" [(ngModel)]="userModel.userPasswordAgain" placeholder="Kullanıcı Şifre Tekrar"> -->
+                <input type="password" id="userPasswordAgain" class="form-control" name="passwordRepeat" [(ngModel)]="passwordRepeat" placeholder="Kullanıcı Şifre Tekrar" required>
             </div>
         </div>
-
         <hr>
-
         <button type="submit" class="btn btn-dark">Kullanıcı Ekle</button>
     </form>
     
