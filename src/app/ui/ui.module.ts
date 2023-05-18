@@ -22,7 +22,8 @@ import { ModelModule } from '../model/model.module';
     RouterModule.forChild([
       {path:"", component: HomeComponent},
       {path:"home", component: HomeComponent},
-      {path:"userAdd", component: UserAddComponent}
+      {path:"userAdd", component: UserAddComponent},
+      {path:"userList", component: UserListComponent}
     ])
   ]
 })
