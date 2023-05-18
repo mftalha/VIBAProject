@@ -1,7 +1,75 @@
-<!--
-<span class="bg-dark text-light">Hello World</span>
--->
+<div class="container-fluid">
+  <div class="row">
+    <!-- 
+      - flex  : mesela div içinde kullanıyor isek ve elemanların alt alta olamsını istiyorsak flex-column gibi kullanabiliriz
+      - justify-content-between => div içindeki elemanların arası açık olsun ;; justify-content-start : div içindeki elemanlar sağdan başlasın
+    -->
+    <div class="d-flex flex-column justify-content-between col-auto bg-dark min-vh-100" style="width: 15%; font-size: 105%;">
+      <div class="mt-4 ms-1"> <!-- d-none d-sm-inline => sayfa sm boyutuna geldiğinde bu tagı gösterme-->
+        <a href="#" class="text-white d-none d-sm-inline text-decoration-none d-flex align-items-center me-4" role="button">
+          <span class="fs-5 ms-4">Side Menu</span> <!-- fs-5 -->
+        </a>
+        <hr class="text-white d-none d-sm-block"> <!-- d-none d-sm-inline -->
+        <ul class="nav nav-pills flex-column mt-2 mt-sm-0" id="menu">
+          <li class="nav-item my-1">
+            <a href="#" class="nav-link text-white text-center text-sm-start" aria-current="page">
+              <i class="fa fa-gauge"></i>
+              <span class="ms-2 d-none d-sm-inline">Dashbaord</span>
+            </a>
+          </li>
+          <li class="nav-item my-1">
+            <a href="#" class="nav-link text-white text-center text-sm-start" aria-current="page">
+              <i class="fa fa-house"></i>
+              <span class="ms-2 d-none d-sm-inline">Home</span>
+            </a>
+          </li>
+          <li class="nav-item my-1 disabled">
+            <a href="#sidemenu" data-bs-toggle="collapse" class="nav-link text-white text-center text-sm-start" aria-current="page">
+              <i class="fa fa-table"></i>
+              <span class="ms-2 d-none d-sm-inline">Kullanıcı İşlemleri</span>
+              <i class="fa fa-caret-down ms-2"></i> <!-- products yazısının sag tarafında aşşağı işaretinin olması-->
+            </a>
+            <ul class="nav collapse ms-1 flex-column" id="sidemenu" data-bs-parent="#menu">
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="userAdd" aria-current="page">Kullanıcı Ekle</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Item 2</a>
+                </li>
+            </ul>
+          </li>
+          <li class="nav-item my-sm-1 my-2">
+            <a href="#" class="nav-link text-white text-center text-sm-start" aria-current="page">
+              <i class="fa fa-users"></i>
+              <span class="ms-2 d-none d-sm-inline">Customers</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="ms-1">
+        <div class="dropdown open">
+          <a style="font-size: 110%" class="btn border-none outline-none text-white dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+                <i class="fa fa-user"></i><span class="ms-1 d-none d-sm-inline">Talha</span>
+              </a>
+          <div class="dropdown-menu" aria-labelledby="triggerId">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="col-">
+  
+</div>
+
+
+
+
+<!-- 
 <div class="container">
   <nav class="navbar bg-dark navbar-dark navbar-expand-lg" data-bs-theme="dark" >
     <div class="container-fluid">
@@ -24,4 +92,4 @@
   </div>
 </div>
 
-
+-->
