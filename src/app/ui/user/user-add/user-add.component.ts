@@ -43,7 +43,7 @@ export class UserAddComponent implements OnInit {
 
   // connection select'i için
   connectionType = [
-    {name: 'Ftp' , value:1},
+    {name: 'Ftp Service' , value:1},
     {name: 'Service' , value:2}
   ]
 
